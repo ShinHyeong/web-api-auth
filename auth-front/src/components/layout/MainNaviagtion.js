@@ -5,7 +5,11 @@ import classes from './MainNavigation.module.css';
 function MainNavigation() {
   return (
     <header className={classes.header}>
-      <Link to='/'><div className={classes.logo}>Hello World!</div></Link>
+      <Link to='/'>
+        <div className={classes.logo}>
+          Hello World!
+        </div>
+      </Link>
     </header>
   );
 }
