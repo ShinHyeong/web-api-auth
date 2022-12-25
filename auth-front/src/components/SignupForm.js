@@ -20,7 +20,7 @@ function SignupForm(){
       city: cityRef.current.value
     }
 
-    fetch("http://localhost:8080/account/create", {
+    fetch("/account/create", {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
@@ -29,7 +29,7 @@ function SignupForm(){
     }).then((response)=> {
       response.json();
     }).then((response)=> {
-      console.log(response);
+      console.log(response); //왜 콘솔창에 안뜨는걸까요?
     }).catch(err=>{
       console.log(err)
     })
