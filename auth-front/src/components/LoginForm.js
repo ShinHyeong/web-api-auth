@@ -16,26 +16,30 @@ function LoginForm(){
       password: passwordRef.current.value
     }
 
-    fetch("http://49.50.167.11:8080/account/create", {
+    fetch("http://localhost:8080/account/create", {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json'
       }
     }).then((response)=> {
+      response.json();
+    }).then((response)=> {
       console.log(response);
+    }).catch(err=>{
+      console.log(err)
     })
   }
 
   return <div>
   <form className={classes.form} onSubmit={onSubmitHandler}>
       <div className={classes.control}>
-        <label htmlFor='userId'>userId</label>
+        <label htmlFor='userId'>UserId</label>
         <input type="text" required id="userId" ref={userIdRef}></input>
       </div>
 
       <div className={classes.control}>
-        <label htmlFor='password'>password</label>
+        <label htmlFor='password'>Password</label>
         <input type="password" required id="password" ref={passwordRef}></input>
       </div>
 
